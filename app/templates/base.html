@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}microblog{% endblock %}</title>
+</head>
+<body>
+    <div>
+        Microblog:
+        <a href="{{url_for('index')}}">На главную</a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login')}}">Login</a>
+        {% else %}
+        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+        <a href="{{ url_for('logout')}}">Logout</a>
+        {% endif %}
+        <hr>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>
