@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title"><a href="{{ url_for('film_info', film_name = post.name)}}">{{ post.name }}</a></h5>
         <p class="card-text">{{ post.rating }}</p>
-        <p class="card-text">{{ post.year }}|{{ post.country }}|{{ post.genre }}</p>
+        <p class="card-text">{{ post.year }} | {{ post.country }} | {{ post.genre }}</p>
         <p class="card-text">Режиссеры: {{ post.producer }}</p>
         </br>
         <hr>

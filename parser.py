@@ -10,10 +10,10 @@ def parser(name):
         for name in js:
             films = list(js[name].values())
             try:
-                post = Cinema(name=name, year=films[0], country=films[1], producer=films[2], genre=films[3],
-                              duration=films[4],
-                              rating=films[5], theaters=films[6], dates=films[7], time=films[8], description=films[9],
-                              image=films[10])
+                post = Cinema(name=name, year=films[0], country=films[1], producer=films[2], duration=films[3],
+                              rating=films[4],
+                              theaters=films[5], dates=films[6], time=films[7], description=films[8], image=films[9],
+                              genre=films[10])
                 db.session.add(post)
                 db.session.commit()
             except IntegrityError:
