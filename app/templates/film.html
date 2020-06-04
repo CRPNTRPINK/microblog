@@ -1,5 +1,18 @@
 {% extends "base.html" %}
+{% block search %}
 
+{#<form class="form-inline" method="GET">#}
+{#    <label for="start">Date:</label>#}
+{#    <input class="form-control mr-sm-2" type="date" name="trip-start" value="{{ date }}" min="2020-01-01" max="2020-12-31">#}
+{#    <button type="'submit">поиск</button>#}
+{##}
+{#</form>#}
+<form class="form-inline" method="GET">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ request.args.get('d', '') }}">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+{% endblock %}
 {% block content %}
 {% for post in posts %}
 <div class="card mb-3" style="max-width: 700px;">

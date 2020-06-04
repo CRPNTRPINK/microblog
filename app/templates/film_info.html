@@ -1,5 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>{{ post.name }}</p>
+<div class="container">
+<div class="row">
+    <div class="col d-flex justify-content-around" >
+        <img style="width: 15rem; height: 20rem;" src="{{ post.image }}" alt="{{ post.name }}">
+    </div>
+    <div class="col align-self-left">
+        <div class="row">
+        <h3>{{ post.name }}</h3>
+        </div>
+        <div class="row">
+            <p>год: {{ post.year }}</p>
+        </div>
+        <div class="row">
+            <p>страна: {{ post.country }}</p>
+        </div>
+        <div class="row">
+            <p>режиссер: {{ post.producer }}</p>
+        </div>
+        <div class="row">
+            <p>жанр: {{ post.genre }}</p>
+        </div>
+        <div class="row">
+            <p>{{ post.duration }}</p>
+        </div>
+        <div class="row">
+            <p>{{ post.rating }}</p>
+        </div>
+        <div class="row">
+            <p>кинотеатр: «{{ post.theaters }}»</p>
+        </div>
+        <div class="row">
+            <h4>сеансы</h4>
+        </div>
+        <div class="row">
+            <p>дата: {{ post.dates }} время: {{ post.time }}</p>
+        </div>
+        <div class="row">
+            <h4>описание</h4>
+            <p>{{ post.description }}</p>
+        </div>
+
+    </div>
+</div>
+</div>
 {% endblock %}
